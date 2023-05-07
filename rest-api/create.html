@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <title>Create Example | Simple Rest API in PHP</title>
+</head>
+<body>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: limegreen;
+            line-height: 1.5;
+            font-family: monospace;
+        }
+        a, a:visited{
+            color: green;
+            font-size: 36px;
+            text-decoration: none;
+        }
+        a:hover, a:active{
+            color: limegreen;
+        }
+        #right{
+            height: 100vh;
+            width: 50%;
+            float: right;
+            background-color: black;
+        }
+        #left{
+            height: 100vh;
+            width: 50%;
+            float: left;
+            background-color: black;
+        }
+        .middle{
+            width: fit-content;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <div id="left">
+    <a href="index.html"> &larr;</a>
+        <div class="middle">
+            <h2>Code</h2>
+            <pre>
+                <code>
+&lt;script type="text/javascript">
+    $('document').ready(function(){
+        $.ajax({
+            url : '/rest-api/items/create',
+            type : 'POST',
+            data : {
+                "name": "Usha Sewing Machine",
+                "description": "its best machine",
+                "price":"90000",
+                "category_id":"6",
+                "created": "2019-11-09 04:30:00"
+            },
+            dataType:'json',
+            success : function(response) {
+
+                $('#right .middle output').text(JSON.stringify(response));
+            }
+        });
+    });
+&lt;/script>
+                </code>
+            </pre>
+        </div>
+    </div>
+    <div id="right">
+        <div class="middle">
+            <h2>Output</h2>
+                <output>
+                
+                </output>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('document').ready(function(){
+            $.ajax({
+                url : '/rest-api/items/create',
+                type : 'POST',
+                data : {
+                    "name": "Usha Sewing Machine",
+                    "description": "its best machine",
+                    "price":"90000",
+                    "category_id":"6",
+                    "created": "2019-11-09 04:30:00"
+                },
+                dataType:'json',
+                success : function(response) {
+
+                    $('#right .middle output').text(JSON.stringify(response));
+                }
+            });
+        });
+    </script>
+</body>
+</html>
